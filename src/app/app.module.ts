@@ -19,7 +19,7 @@ import { FormsModule } from '@angular/forms';
     ListarAnimalComponent,
     CadastrarAnimalComponent,
     ListarUsuarioComponent,
-    CadastrarUsuarioComponent
+    CadastrarUsuarioComponent,
   ],
   imports: [
     BrowserModule,

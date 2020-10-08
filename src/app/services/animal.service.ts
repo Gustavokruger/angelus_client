@@ -8,16 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class AnimalService {
 
-  baseUrl:'http://localhost:1234';
-  
-
   constructor(private http: HttpClient) { }
  
   list(): Observable<Animal[]>{
-    return this.http.get<Animal[]>(this.baseUrl);
+    return this.http.get<Animal[]>('/api/animal/listar');
   }
 
   create(animal: Animal): Observable<Animal>{
-    return this.http.post<Animal>(this.baseUrl, animal);
+    return this.http.post<Animal>('/api/animal/cadastrar', animal);
   }
 }

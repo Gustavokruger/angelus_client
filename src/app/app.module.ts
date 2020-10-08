@@ -7,18 +7,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ListarAnimalComponent } from './views/animal/listar-animal/listar-animal.component';
 import { LoginComponent } from './views/login/login.component';
+import { CadastrarAnimalComponent } from './views/animal/cadastrar-animal/cadastrar-animal.component';
+import { ListarUsuarioComponent } from './views/usuario/listar-usuario/listar-usuario.component';
+import { CadastrarUsuarioComponent } from './views/usuario/cadastrar-usuario/cadastrar-usuario.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ListarAnimalComponent,
+    CadastrarAnimalComponent,
+    ListarUsuarioComponent,
+    CadastrarUsuarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    LayoutModule
+    LayoutModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

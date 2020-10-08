@@ -5,23 +5,23 @@
             <form>
                 <div class="row">
                     <div class="col-lg-12">
-                        <input type="text" name="nome" placeholder="Nome do Usuario">
+                        <input type="text" name="nome" placeholder="Nome do Usuario" [(ngModel)]="usuario.nome">
                     </div>
                     <div class="col-lg-12">
-                        <input type="text" name="cpf" placeholder="Cpf">
+                        <input type="text" name="cpf" placeholder="Cpf" [(ngModel)]="usuario.cpf">
                     </div>
                     <div class="col-lg-12">
-                        <input type="text" name="endereco" placeholder="Endereço">
+                        <input type="text" name="endereco" placeholder="Endereço" [(ngModel)]="usuario.endereco">
                     </div>
                     <div class="col-lg-12">
-                        <input type="text" name="telefone" placeholder="Telefone">
+                        <input type="text" name="telefone" placeholder="Telefone" [(ngModel)]="usuario.telefone">
                     </div>
                     <div class="col-lg-12">
-                        <input type="text" name="email" placeholder="Email">
+                        <input type="text" name="email" placeholder="Email" [(ngModel)]="usuario.email">
                     </div>
                     <div class="col-lg-12">
                         <ul>
-                            <li><button class="active" type="submit" value="post">Cadastrar</button></li>
+                            <li><button (click)="create()">Cadastrar</button></li>
                             <li><a href="#" title="">Cancelar</a></li>
                         </ul>
                     </div>

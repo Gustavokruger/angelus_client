@@ -9,17 +9,15 @@ import { Usuario } from '../Models/Usuario';
 export class UsuarioService {
 
 
-  baseUrl:'http://localhost:1234';
-
   constructor(private http: HttpClient) { }
 
 
 
   list(): Observable<Usuario[]>{
-    return this.http.get<Usuario[]>(this.baseUrl)
+    return this.http.get<Usuario[]>('/api/usuario/listar')
   }
 
   create(usuario: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>(this.baseUrl, usuario);
+    return this.http.post<Usuario>('/api/usuario/cadastrar', usuario);
   }
 }

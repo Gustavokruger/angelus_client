@@ -14,10 +14,13 @@ export class CadastrarUsuarioComponent implements OnInit {
   usuario: Usuario; // Onde vai receber os dados do formulario
 
   ngOnInit(): void {
+    this.usuario = new Usuario();
   }
 
   create(): void{
-    this.service.create(this.usuario);
+    this.service.create(this.usuario).subscribe((usuario) =>{
+      console.log(usuario);
+    });
   }
 
 }

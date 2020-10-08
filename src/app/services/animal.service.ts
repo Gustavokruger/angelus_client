@@ -14,6 +14,10 @@ export class AnimalService {
     return this.http.get<Animal[]>('/api/animal/exibeadotar/false');
   }
 
+  qanimal(): Observable<Number>{
+    return this.http.get<Number>('/api/animal/qanimal/false');
+  }
+
   create(animal: Animal): Observable<Animal>{
     return this.http.post<Animal>('/api/animal/cadastrar', animal);
   }

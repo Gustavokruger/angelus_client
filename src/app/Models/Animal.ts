@@ -1,6 +1,7 @@
 export class Animal{
 
     _id?: string;
+    id: string;
     tipo: string;
     nome: string;
     idade: string;

@@ -1,10 +1,33 @@
-<label>Teste para cadastrar Usuario</label>
-
-<input
-    type="text"
-    placeholder="Nome do usuario"
-    name="nome"
-    [(ngModel)]="usuario.nome"
-
-
-/>
+<div class="post-popup job_post">
+    <div class="post-project">
+        <h3>Cadastrar Usuario</h3>
+        <div class="post-project-fields">
+            <form>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <input type="text" name="nome" placeholder="Nome do Usuario">
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" name="cpf" placeholder="Cpf">
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" name="endereco" placeholder="Endereço">
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" name="telefone" placeholder="Telefone">
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" name="email" placeholder="Email">
+                    </div>
+                    <div class="col-lg-12">
+                        <ul>
+                            <li><button class="active" type="submit" value="post">Cadastrar</button></li>
+                            <li><a href="#" title="">Cancelar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div><!--post-project-fields end-->
+        <a href="#" title=""><i class="la la-times-circle-o"></i></a>
+    </div><!--post-project end-->
+</div><!--post-project-popup end-->

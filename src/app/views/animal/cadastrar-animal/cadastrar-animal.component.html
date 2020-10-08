@@ -5,11 +5,11 @@
             <form>
                 <div class="row">
                     <div class="col-lg-12">
-                        <input type="text" name="nome" placeholder="Nome do Animal">
+                        <input type="text" name="nome" placeholder="Nome do Animal" [(ngModel)]="animal.nome">
                     </div>
                     <div class="col-lg-12">
                         <div class="inp-field">
-                            <select name="tipo">
+                            <select name="tipo" [(ngModel)]="animal.tipo">
                                 <option>Tipo</option>
                                 <option value="CACHORRO">Cachorro</option>
                                 <option value="GATO">Gato</option>
@@ -18,11 +18,11 @@
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        <input type="text" name="idade" placeholder="Idade">
+                        <input type="text" name="idade" placeholder="Idade" [(ngModel)]="animal.idade">
                     </div>
                     <div class="col-lg-12">
                         <div class="inp-field">
-                            <select name="porte">
+                            <select name="porte" [(ngModel)]="animal.porte">
                                 <option>Porte</option>
                                 <option value="PEQUENO">Pequeno</option>
                                 <option value="MÉDIO">Médio</option>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="inp-field">
-                            <select name="sexo">
+                            <select name="sexo" [(ngModel)]="animal.sexo">
                                 <option>Sexo</option>
                                 <option value="MACHO">Macho</option>
                                 <option value="FÊMEA">Femea</option>
@@ -40,11 +40,11 @@
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        <textarea name="descricao" placeholder="Descrição"></textarea>
+                        <textarea name="descricao" placeholder="Descrição" [(ngModel)]="animal.tipo"></textarea>
                     </div>
                     <div class="col-lg-12">
                         <ul>
-                            <li><button class="active" type="submit" value="post">Cadastrar</button></li>
+                            <li><button  (click)="create()">Cadastrar</button></li>
                             <li><a href="#" title="">Cancelar</a></li>
                         </ul>
                     </div>

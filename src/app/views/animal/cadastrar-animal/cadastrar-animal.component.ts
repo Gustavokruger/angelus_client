@@ -4,6 +4,9 @@ import { AnimalService } from '../../../services/animal.service';
 import { Router } from '@angular/router';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
+import { UsuarioService } from '../../../services/usuario.service';
+import { Usuario } from '../../../Models/Usuario';
+
 @Component({
   selector: 'app-cadastrar-animal',
   templateUrl: './cadastrar-animal.component.html',
@@ -13,11 +16,13 @@ export class CadastrarAnimalComponent implements OnInit {
 
   animal: Animal;
   angForm: FormGroup;
+  usuarios: Usuario[] = [];
 
   constructor(
       private fb: FormBuilder, 
       private router: Router, 
-      private animalService: AnimalService
+      private animalService: AnimalService,
+      private usuarioService: UsuarioService
   ) { 
     this.createForm();
   }
@@ -37,6 +42,10 @@ export class CadastrarAnimalComponent implements OnInit {
 
   ngOnInit(): void {
     this.animal = new Animal();
+
+    this.usuarioService.list().subscribe((lista) =>{
+      this.usuarios = lista
+    })
   }
 
   create(): void {

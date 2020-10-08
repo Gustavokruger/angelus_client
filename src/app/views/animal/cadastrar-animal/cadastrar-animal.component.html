@@ -90,7 +90,9 @@
                 </div>
 
                 <div class="col-lg-12">
-                    <input type="text" name="usuario" placeholder="Nome do Usuário" [(ngModel)]="animal.usuario" formControlName="usuario">
+                    <select name="usuario" [(ngModel)]="animal.usuario" formControlName="usuario">
+                        <option *ngFor="let d of usuarios" value="{{d._id}}">{{d.nome}}</option>
+                    </select>
                     
                     <div *ngIf="angForm.controls['usuario'].invalid && (angForm.controls['usuario'].dirty || angForm.controls['usuario'].touched)" class="alert alert-danger">
                         <div *ngIf="angForm.controls['usuario'].errors.required">

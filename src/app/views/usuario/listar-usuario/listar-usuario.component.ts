@@ -12,7 +12,6 @@ export class ListarUsuarioComponent implements OnInit {
 
   constructor(private router: Router, private usuarioService: UsuarioService) { }
 
-
   usuarios: Usuario[] = [];
 
   ngOnInit(): void {

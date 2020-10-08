@@ -8,10 +8,7 @@ import { Usuario } from '../Models/Usuario';
 })
 export class UsuarioService {
 
-
   constructor(private http: HttpClient) { }
-
-
 
   list(): Observable<Usuario[]>{
     return this.http.get<Usuario[]>('/api/usuario/listar')

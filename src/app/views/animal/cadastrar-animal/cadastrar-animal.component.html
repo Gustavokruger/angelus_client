@@ -1,62 +1,112 @@
-<div class="post-popup job_post">
+<div class="post-popup pst-pj">
     <div class="post-project">
         <h3>Cadastrar Animal</h3>
         <div class="post-project-fields">
-            <form>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <input type="text" name="id" placeholder="Código" [(ngModel)]="animal.id">
-                    </div>
-                    <div class="col-lg-12">
-                        <input type="text" name="nome" placeholder="Nome do Animal" [(ngModel)]="animal.nome">
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="inp-field">
-                            <select name="tipo" [(ngModel)]="animal.tipo">
-                                <option>Tipo</option>
-                                <option value="CACHORRO">Cachorro</option>
-                                <option value="GATO">Gato</option>
-                                <option value="AVE">Ave</option>
-                            </select>
+            <form [formGroup]="angForm" novalidate>
+
+                <div class="col-lg-12">
+                    <input type="text" name="id" placeholder="Código" [(ngModel)]="animal.id" formControlName="id">
+               
+                    <div *ngIf="angForm.controls['id'].invalid && (angForm.controls['id'].dirty || angForm.controls['id'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['id'].errors.required">
+                        Preenchimento obrigatório
                         </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <input type="text" name="idade" placeholder="Idade" [(ngModel)]="animal.idade">
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="inp-field">
-                            <select name="porte" [(ngModel)]="animal.porte">
-                                <option>Porte</option>
-                                <option value="PEQUENO">Pequeno</option>
-                                <option value="MÉDIO">Médio</option>
-                                <option value="GRANDE">Grande</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="inp-field">
-                            <select name="sexo" [(ngModel)]="animal.sexo">
-                                <option>Sexo</option>
-                                <option value="MACHO">Macho</option>
-                                <option value="FÊMEA">Femea</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <textarea name="descricao" placeholder="Descrição" [(ngModel)]="animal.descricao"></textarea>
-                    </div>
-                    <div class="col-lg-12">
-                        <input type="text" name="usuario" placeholder="Nome do Usuário" [(ngModel)]="animal.usuario">
-                    </div>
-                    <div class="col-lg-12">
-                        <ul>
-                            <li><button  (click)="create()">Cadastrar</button></li>
-                            <li><a href="#" title="">Cancelar</a></li>
-                        </ul>
                     </div>
                 </div>
+
+                <div class="col-lg-12">
+                    <input type="text" name="nome" placeholder="Nome do Animal" [(ngModel)]="animal.nome" formControlName="nome">
+               
+                    <div *ngIf="angForm.controls['nome'].invalid && (angForm.controls['nome'].dirty || angForm.controls['nome'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['nome'].errors.required">
+                        Preenchimento obrigatório
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+            
+                    <select name="tipo" [(ngModel)]="animal.tipo" formControlName="tipo">
+                        <option value=''>Tipo</option>
+                        <option value="CACHORRO">Cachorro</option>
+                        <option value="GATO">Gato</option>
+                        <option value="AVE">Ave</option>
+                    </select>
+
+                    <div *ngIf="angForm.controls['tipo'].invalid && (angForm.controls['tipo'].dirty || angForm.controls['tipo'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['tipo'].errors.required">
+                        Preenchimento obrigatório
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <input type="text" name="idade" placeholder="Idade" [(ngModel)]="animal.idade" formControlName="idade">
+
+                    <div *ngIf="angForm.controls['idade'].invalid && (angForm.controls['idade'].dirty || angForm.controls['idade'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['idade'].errors.required">
+                        Preenchimento obrigatório
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <select name="porte" [(ngModel)]="animal.porte" formControlName="porte">
+                        <option>Porte</option>
+                        <option value="PEQUENO">Pequeno</option>
+                        <option value="MÉDIO">Médio</option>
+                        <option value="GRANDE">Grande</option>
+                    </select>
+                    
+                    <div *ngIf="angForm.controls['porte'].invalid && (angForm.controls['porte'].dirty || angForm.controls['porte'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['porte'].errors.required">
+                        Preenchimento obrigatório
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <select name="sexo" [(ngModel)]="animal.sexo" formControlName="sexo">
+                        <option>Sexo</option>
+                        <option value="MACHO">Macho</option>
+                        <option value="FÊMEA">Femea</option>
+                    </select>
+                    
+                    <div *ngIf="angForm.controls['sexo'].invalid && (angForm.controls['sexo'].dirty || angForm.controls['sexo'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['sexo'].errors.required">
+                        Preenchimento obrigatório
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <textarea name="descricao" placeholder="Descrição" [(ngModel)]="animal.descricao" formControlName="descricao"></textarea>
+                    
+                    <div *ngIf="angForm.controls['descricao'].invalid && (angForm.controls['descricao'].dirty || angForm.controls['descricao'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['descricao'].errors.required">
+                        Preenchimento obrigatório
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <input type="text" name="usuario" placeholder="Nome do Usuário" [(ngModel)]="animal.usuario" formControlName="usuario">
+                    
+                    <div *ngIf="angForm.controls['usuario'].invalid && (angForm.controls['usuario'].dirty || angForm.controls['usuario'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['usuario'].errors.required">
+                        Preenchimento obrigatório
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <button type="submit" (click)="create()"
+                    [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
+                    Cadastrar
+                </button>
+                </div>
             </form>
-        </div><!--post-project-fields end-->
+        </div>
         <a href="#" title=""><i class="la la-times-circle-o"></i></a>
-    </div><!--post-project end-->
-</div><!--post-project-popup end-->
+    </div>
+</div>

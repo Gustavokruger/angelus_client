@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/Models/Usuario';
 import { UsuarioService } from '../../../services/usuario.service';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -9,9 +10,25 @@ import { UsuarioService } from '../../../services/usuario.service';
 })
 export class CadastrarUsuarioComponent implements OnInit {
 
-  constructor(private service: UsuarioService) { }
+  constructor(
+    private fb: FormBuilder, 
+    private service: UsuarioService
+  ) { 
+    this.createForm();
+  }
 
-  usuario: Usuario; // Onde vai receber os dados do formulario
+  usuario: Usuario;
+  angForm: FormGroup;
+
+  createForm() {
+    this.angForm = this.fb.group({
+       nome: ['', Validators.required ],
+       cpf: ['', Validators.required ],
+       endereco: ['', Validators.required ],
+       telefone: ['', Validators.required ],
+       email: ['', Validators.required ],
+    });
+  }
 
   ngOnInit(): void {
     this.usuario = new Usuario();

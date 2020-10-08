@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Animal } from 'src/app/Models/Animal';
 import { AnimalService } from 'src/app/services/animal.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-listar-animal',
@@ -12,7 +13,11 @@ export class ListarAnimalComponent implements OnInit {
 
   animais: Animal[] = [];
 
-  constructor(private router: Router, private animalService: AnimalService) {}
+  constructor(
+    private router: Router, 
+    private animalService: AnimalService, 
+    private utilsService: UtilsService
+  ) {}
 
   ngOnInit(): void {
     this.animalService.list().subscribe((lista) =>{

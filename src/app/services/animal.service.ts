@@ -11,7 +11,7 @@ export class AnimalService {
   constructor(private http: HttpClient) { }
  
   list(): Observable<Animal[]>{
-    return this.http.get<Animal[]>('/api/animal/listar');
+    return this.http.get<Animal[]>('/api/animal/exibeadotar/false');
   }
 
   create(animal: Animal): Observable<Animal>{

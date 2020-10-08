@@ -1,34 +1,26 @@
 <div class="main-ws-sec">
-rwrewrwe
-    <div *ngFor="let d of animais">
-        {{d.tipo}}
-    </div>
 
     <!--post-topbar end-->
-    <div class="posts-section">
+    <div *ngFor="let d of animais" class="posts-section">
 
         <div class="post-bar">
             <div class="post_topbar">
                 <div class="usy-dt">
                     <img src="http://via.placeholder.com/50x50" alt="">
                     <div class="usy-name">
-                        <h3>John Doe</h3>
-                        <span><img src="assets/images/clock.png" alt="">3 min ago</span>
+                        <h3>John Doe </h3>
+                        <span><img src="assets/images/clock.png" alt="">{{utilsService.dateTimeDB2BR(d.criadoEm)}}</span>
                     </div>
                 </div>
             </div>
             <div class="job_descp">
-                <h3>Senior Wordpress Developer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                    luctus hendrerit metus, ut ullamcorper quam finibus at. Etiam id
-                    magna sit amet... <a href="#" title="">view more</a></p>
+                <h3>Nome: {{d.nome}}</h3>
+                <p>{{d.descricao}}</p>
 
                 <ul class="skill-tags">
-                    <li><a href="#" title="">HTML</a></li>
-                    <li><a href="#" title="">PHP</a></li>
-                    <li><a href="#" title="">CSS</a></li>
-                    <li><a href="#" title="">Javascript</a></li>
-                    <li><a href="#" title="">Wordpress</a></li>
+                    <li><a href="#" title="">Porte: {{d.porte}}</a></li>
+                    <li><a href="#" title="">Sexo: {{d.sexo}}</a></li>
+                    <li><a href="#" title="">Idade: {{d.idade}}</a></li>
                 </ul>
             </div>
             <div class="job-status-bar">
@@ -50,5 +42,6 @@ rwrewrwe
 
     </div>
     <!--posts-section end-->
+
 </div>
 <!--main-ws-sec end-->

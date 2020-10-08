@@ -12,7 +12,7 @@ import { LoginComponent } from './views/login/login.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    ListarAnimalComponent
+    ListarAnimalComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,10 @@ export class UsuarioService {
     return this.http.get<Usuario[]>('/api/usuario/listar')
   }
 
+  qusuario(): Observable<Number>{
+    return this.http.get<Number>('/api/usuario/qusuario');
+  }
+
   create(usuario: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>('/api/usuario/cadastrar', usuario);
   }

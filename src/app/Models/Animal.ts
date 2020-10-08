@@ -1,5 +1,6 @@
-export class Animal{
+import { Usuario } from './Usuario';
 
+export class Animal{
     _id?: string;
     id: string;
     tipo: string;
@@ -10,4 +11,5 @@ export class Animal{
     descricao: string;
     adotado: boolean;
     criandoEm?: Date;
+    usuario: Usuario;
 }

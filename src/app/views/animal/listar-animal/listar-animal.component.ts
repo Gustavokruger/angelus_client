@@ -12,7 +12,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class ListarAnimalComponent implements OnInit {
 
   animais: Animal[] = [];
-
+  
   constructor(
     private router: Router, 
     private animalService: AnimalService, 

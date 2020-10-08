@@ -5,6 +5,9 @@
             <form>
                 <div class="row">
                     <div class="col-lg-12">
+                        <input type="text" name="id" placeholder="Código" [(ngModel)]="animal.id">
+                    </div>
+                    <div class="col-lg-12">
                         <input type="text" name="nome" placeholder="Nome do Animal" [(ngModel)]="animal.nome">
                     </div>
                     <div class="col-lg-12">
@@ -40,7 +43,10 @@
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        <textarea name="descricao" placeholder="Descrição" [(ngModel)]="animal.tipo"></textarea>
+                        <textarea name="descricao" placeholder="Descrição" [(ngModel)]="animal.descricao"></textarea>
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" name="usuario" placeholder="Nome do Usuário" [(ngModel)]="animal.usuario">
                     </div>
                     <div class="col-lg-12">
                         <ul>

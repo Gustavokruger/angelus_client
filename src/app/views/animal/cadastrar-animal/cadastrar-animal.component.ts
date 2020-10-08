@@ -10,16 +10,18 @@ import { Router } from '@angular/router';
 })
 export class CadastrarAnimalComponent implements OnInit {
 
-
-  animal: Animal; //vai receber os dados do formulario
-
-  constructor(private router: Router ,private service: AnimalService) { }
+  animal: Animal;
+  
+  constructor(private router: Router, private animalService: AnimalService) { }
 
   ngOnInit(): void {
+    this.animal = new Animal();
   }
 
-  create(): void{
-    this.service.create(this.animal)
+  create(): void {
+    this.animalService.create(this.animal).subscribe((animal) => {
+      console.log(animal);
+    });
   }
 
   navigateToCadastrarAnimal(): void{

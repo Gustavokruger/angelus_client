@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './views/login/login.component';
 import { ListarAnimalComponent } from './views/animal/listar-animal/listar-animal.component';
+import { CadastrarAnimalComponent } from './views/animal/cadastrar-animal/cadastrar-animal.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   { 
     path: 'login', 
     component: LoginComponent 
+  },
+  {
+    path: 'animal/cadastrar',
+    component: CadastrarAnimalComponent
   }
 ];
 

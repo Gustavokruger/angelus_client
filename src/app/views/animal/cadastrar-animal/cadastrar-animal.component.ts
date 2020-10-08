@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal } from '../../../Models/Animal';
 import { AnimalService } from '../../../services/animal.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-animal',
@@ -12,7 +13,7 @@ export class CadastrarAnimalComponent implements OnInit {
 
   animal: Animal; //vai receber os dados do formulario
 
-  constructor(private service: AnimalService) { }
+  constructor(private router: Router ,private service: AnimalService) { }
 
   ngOnInit(): void {
   }
@@ -21,4 +22,7 @@ export class CadastrarAnimalComponent implements OnInit {
     this.service.create(this.animal)
   }
 
+  navigateToCadastrarAnimal(): void{
+    this.router.navigate(['animal/cadastrar']);
+  }
 }

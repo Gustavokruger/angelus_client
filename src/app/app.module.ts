@@ -17,6 +17,8 @@ import { CadastrarUsuarioComponent } from './views/usuario/cadastrar-usuario/cad
 import { IndexComponent } from './views/index/index.component';
 import { MainComponent } from './layout/main/main.component';
 import { AutenticarUsuarioComponent } from './views/usuario/autenticar-usuario/autenticar-usuario.component';
+import { CadastraPostComponent } from './views/post/cadastra-post/cadastra-post.component';
+import { ListarPostComponent } from './views/post/listar-post/listar-post.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { AutenticarUsuarioComponent } from './views/usuario/autenticar-usuario/a
     IndexComponent,
     MainComponent,
     AutenticarUsuarioComponent,
+    CadastraPostComponent,
+    ListarPostComponent,
   ],
   imports: [
     BrowserModule,

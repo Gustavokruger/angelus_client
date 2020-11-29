@@ -10,15 +10,19 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  list(): Observable<Usuario[]>{
+  list(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>('/api/usuario/listar')
   }
 
-  qusuario(): Observable<Number>{
+  qusuario(): Observable<Number> {
     return this.http.get<Number>('/api/usuario/qusuario');
   }
 
-  create(usuario: Usuario): Observable<Usuario>{
+  create(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>('/api/usuario/cadastrar', usuario);
+  }
+
+  logar(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>('/api/usuario/logar', usuario);
   }
 }

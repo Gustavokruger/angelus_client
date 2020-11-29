@@ -16,6 +16,7 @@ import { ListarUsuarioComponent } from './views/usuario/listar-usuario/listar-us
 import { CadastrarUsuarioComponent } from './views/usuario/cadastrar-usuario/cadastrar-usuario.component';
 import { IndexComponent } from './views/index/index.component';
 import { MainComponent } from './layout/main/main.component';
+import { AutenticarUsuarioComponent } from './views/usuario/autenticar-usuario/autenticar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MainComponent } from './layout/main/main.component';
     CadastrarUsuarioComponent,
     IndexComponent,
     MainComponent,
+    AutenticarUsuarioComponent,
   ],
   imports: [
     BrowserModule,

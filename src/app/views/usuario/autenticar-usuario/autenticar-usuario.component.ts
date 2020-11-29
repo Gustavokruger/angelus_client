@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../../Models/Usuario';
 import { UsuarioService } from '../../../services/usuario.service';
+import { AuthService } from '../../../services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-autenticar-usuario',
@@ -12,7 +14,9 @@ export class AutenticarUsuarioComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private service: UsuarioService
+    private service: UsuarioService,
+    private authService: AuthService,
+    private router: Router
   ) {
     this.createForm();
   }
@@ -37,7 +41,9 @@ export class AutenticarUsuarioComponent implements OnInit {
     this.service.logar(this.usuario)
       .subscribe(
         result => {
-          console.log(result);
+          this.authService.createSession(this.usuario).then(() => {
+            this.router.navigate(['/app']);
+          });
         },
         err => {
           this.angFormError = true;

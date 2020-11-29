@@ -7,20 +7,29 @@ import { LoginComponent } from './views/login/login.component';
 import { ListarAnimalComponent } from './views/animal/listar-animal/listar-animal.component';
 import { CadastrarAnimalComponent } from './views/animal/cadastrar-animal/cadastrar-animal.component';
 import { IndexComponent } from './views/index/index.component';
+import { AuthGuard } from '../app/guards/auth.guard';
+import { NoAuthGuard } from '../app/guards/no-auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: IndexComponent
+    component: IndexComponent,
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [NoAuthGuard],
   },
   {
     path: 'app',
     component: MainComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     children: [
+      {
+        path: '',
+        component: ListarAnimalComponent
+      },
       {
         path: 'animal',
         component: ListarAnimalComponent

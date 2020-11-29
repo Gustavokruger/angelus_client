@@ -10,7 +10,10 @@ export class AuthService {
 
   async createSession(usuario: Usuario) {
     return Promise.resolve().then(() => {
-      return localStorage.setItem("auth", "true");
+      localStorage.setItem("auth", "true");
+      localStorage.setItem("userData", JSON.stringify(usuario));
+
+      return true;
     });
   }
 }

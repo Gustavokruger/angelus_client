@@ -11,7 +11,8 @@ export class AnimalService {
   constructor(private http: HttpClient) { }
 
   list(): Observable<Animal[]> {
-    return this.http.get<Animal[]>('/api/animal/exibeadotar/false');
+    const data = JSON.parse(localStorage.getItem("userData"));
+    return this.http.get<Animal[]>(`/api/animal/listar/${data._id}`);
   }
 
   qanimal(): Observable<Number> {

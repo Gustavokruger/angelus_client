@@ -5,8 +5,6 @@ export class Post {
     
     _id?: string;
     descricao: string;
-    fotos: string[];
     usuario: Usuario;
-    animais: Animal[];
     criadoEm?: Date;
 }

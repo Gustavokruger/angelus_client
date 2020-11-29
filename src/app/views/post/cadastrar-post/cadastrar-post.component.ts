@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../../../Models/Usuario';
+import { Animal } from '../../../Models/Animal';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastrar-post',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarPostComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(
+    private fb: FormBuilder,
+  ) {
+    this.createForm();
   }
 
+  usuario: Usuario;
+  animais: Animal[];
+  angForm: FormGroup;
+  angFormError: boolean = false;
+  angFormErrorMessage: String = null;
+
+  createForm(){
+    this.angForm = this.fb.group({
+      descricao:['', Validators.required],
+    })
+  }
+
+  ngOnInit(): void {
+    this.usuario = new Usuario();
+    this.animais = [];
+
+  }
+
+  create(): void {
+    this
+  }
 }

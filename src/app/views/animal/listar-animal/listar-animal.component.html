@@ -4,10 +4,11 @@
         <div class="post-st">
             <ul>
                 <li><a class="post_project" href="#" title="">Cadastrar Animal</a></li>
-                <li><a class="post-jb active" href="#" title="">Cadastrar Usuario</a></li>
             </ul>
-        </div><!--post-st end-->
-    </div><!--post-topbar end-->
+        </div>
+        <!--post-st end-->
+    </div>
+    <!--post-topbar end-->
 
     <!--post-topbar end-->
     <div *ngFor="let d of animais" class="posts-section">
@@ -18,7 +19,8 @@
                     <img src="assets/images/{{d.usuario.cpf}}.png" alt="">
                     <div class="usy-name">
                         <h3>{{d.usuario.nome}}</h3>
-                        <span><img src="assets/images/clock.png" alt="">{{utilsService.dateTimeDB2BR(d.criadoEm)}}</span>
+                        <span><img src="assets/images/clock.png"
+                                alt="">{{utilsService.dateTimeDB2BR(d.criadoEm)}}</span>
                     </div>
                 </div>
                 <div class="ed-opts">
@@ -48,7 +50,4 @@
 </div>
 <!--main-ws-sec end-->
 
-
 <app-cadastrar-animal></app-cadastrar-animal>
-
-<app-cadastrar-usuario></app-cadastrar-usuario>

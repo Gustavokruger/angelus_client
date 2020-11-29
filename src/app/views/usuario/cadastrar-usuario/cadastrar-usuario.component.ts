@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/Models/Usuario';
 import { UsuarioService } from '../../../services/usuario.service';
-import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -11,9 +11,9 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 export class CadastrarUsuarioComponent implements OnInit {
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private service: UsuarioService
-  ) { 
+  ) {
     this.createForm();
   }
 
@@ -22,11 +22,11 @@ export class CadastrarUsuarioComponent implements OnInit {
 
   createForm() {
     this.angForm = this.fb.group({
-       nome: ['', Validators.required ],
-       cpf: ['', Validators.required ],
-       endereco: ['', Validators.required ],
-       telefone: ['', Validators.required ],
-       email: ['', Validators.required ],
+      nome: ['', Validators.required],
+      cpf: ['', Validators.required],
+      endereco: ['', Validators.required],
+      telefone: ['', Validators.required],
+      email: ['', Validators.required],
     });
   }
 
@@ -34,10 +34,16 @@ export class CadastrarUsuarioComponent implements OnInit {
     this.usuario = new Usuario();
   }
 
-  create(): void{
-    this.service.create(this.usuario).subscribe((usuario) =>{
-      console.log(usuario);
-    });
+  create(): void {
+    this.service.create(this.usuario)
+      .subscribe(
+        result => {
+          console.log(result);
+        },
+        err => {
+
+        }
+      );
   }
 
 }

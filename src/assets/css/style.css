@@ -1962,6 +1962,7 @@ select {
 
 .sign-in {
 	background-color: #e75348;
+	/* background-color: #f17d8c; */
 }
 .sign-in-page {
 	float: left;
@@ -2095,7 +2096,7 @@ select {
 .sign-control {
 	float: left;
 	width: 100%;
-	text-align: right;
+	text-align: left;
 	padding-right: 50px;
 	margin-bottom: 70px;
 }

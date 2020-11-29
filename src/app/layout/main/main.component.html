@@ -1,0 +1,31 @@
+<div class="wrapper">
+
+    <app-header></app-header>
+
+    <main>
+        <div class="main-section">
+            <div class="container">
+                <div class="main-section-data">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-4 pd-left-none no-pd">
+                            <app-user-info></app-user-info>
+                        </div>
+
+                        <div class="col-lg-6 col-md-8 no-pd">
+                            <router-outlet></router-outlet>
+                        </div>
+
+                        <div class="col-lg-3 pd-right-none no-pd">
+                            <div class="right-sidebar">
+                            </div>
+                            <!--right-sidebar end-->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- main-section-data end-->
+    </main>
+
+</div>

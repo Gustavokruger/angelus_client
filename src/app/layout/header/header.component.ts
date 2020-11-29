@@ -13,7 +13,11 @@ export class HeaderComponent implements OnInit {
     protected router: Router
   ) { }
 
+  userName: string;
+
   ngOnInit(): void {
+    const data = JSON.parse(localStorage.getItem("userData"));
+    this.userName = data.nome;
   }
 
   logout(): void {

@@ -15,4 +15,5 @@
     animation-name: up;
     animation-duration: 300ms;
     animation-fill-mode: backwards;
+    color: white;
 }

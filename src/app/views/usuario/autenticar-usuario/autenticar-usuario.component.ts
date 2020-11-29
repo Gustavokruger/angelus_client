@@ -41,7 +41,7 @@ export class AutenticarUsuarioComponent implements OnInit {
     this.service.logar(this.usuario)
       .subscribe(
         result => {
-          this.authService.createSession(this.usuario).then(() => {
+          this.authService.createSession(result).then(() => {
             this.router.navigate(['/app']);
           });
         },

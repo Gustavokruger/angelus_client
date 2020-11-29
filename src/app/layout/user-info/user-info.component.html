@@ -8,7 +8,7 @@
             </div>
             <!--username-dt end-->
             <div class="user-specs">
-                <h3>Angeluz</h3>
+                <h3>{{userName}}</h3>
                 <span>Seja o Anjo da Guarda para um de nossos animais,
                     adote hoje o seu melhor amigo!
                 </span>
@@ -24,6 +24,9 @@
             <li>
                 <h4>Usuários Cadastrados</h4>
                 <span>{{qusuario}}</span>
+            </li>
+            <li>
+                <a [routerLink]="" (click)="logout()">Logout</a>
             </li>
         </ul>
     </div>

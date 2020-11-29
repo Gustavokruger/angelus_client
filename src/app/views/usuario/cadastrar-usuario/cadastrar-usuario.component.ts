@@ -19,6 +19,8 @@ export class CadastrarUsuarioComponent implements OnInit {
 
   usuario: Usuario;
   angForm: FormGroup;
+  angFormError: boolean = false;
+  angFormErrorMessage: String = null;
 
   createForm() {
     this.angForm = this.fb.group({
@@ -27,6 +29,7 @@ export class CadastrarUsuarioComponent implements OnInit {
       endereco: ['', Validators.required],
       telefone: ['', Validators.required],
       email: ['', Validators.required],
+      senha: ['', Validators.required],
     });
   }
 
@@ -41,7 +44,8 @@ export class CadastrarUsuarioComponent implements OnInit {
           console.log(result);
         },
         err => {
-
+          this.angFormError = true;
+          this.angFormErrorMessage = err.error.mensagem;
         }
       );
   }

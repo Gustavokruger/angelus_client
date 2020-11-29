@@ -1,12 +1,20 @@
 <form [formGroup]="angForm" novalidate>
     <div class="row">
         <div class="col-lg-12 no-pdd">
+            <div *ngIf="angFormError">
+                <div class="alert alert-danger">
+                    {{angFormErrorMessage}}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 no-pdd">
             <div class="sn-field">
                 <input type="text" name="nome" placeholder="Nome do Usuario" [(ngModel)]="usuario.nome"
                     formControlName="nome">
+                <i class="la la-user"></i>
 
                 <div *ngIf="angForm.controls['nome'].invalid && (angForm.controls['nome'].dirty || angForm.controls['nome'].touched)"
-                    class="alert alert-danger">
+                    class="alert alert-danger mt-2">
                     <div *ngIf="angForm.controls['nome'].errors.required">
                         Preenchimento obrigatório
                     </div>
@@ -16,9 +24,10 @@
         <div class="col-lg-12 no-pdd">
             <div class="sn-field">
                 <input type="text" name="cpf" placeholder="Cpf" [(ngModel)]="usuario.cpf" formControlName="cpf">
+                <i class="la la-user"></i>
 
                 <div *ngIf="angForm.controls['cpf'].invalid && (angForm.controls['cpf'].dirty || angForm.controls['cpf'].touched)"
-                    class="alert alert-danger">
+                    class="alert alert-danger mt-2">
                     <div *ngIf="angForm.controls['cpf'].errors.required">
                         Preenchimento obrigatório
                     </div>
@@ -29,9 +38,10 @@
             <div class="sn-field">
                 <input type="text" name="endereco" placeholder="Endereço" [(ngModel)]="usuario.endereco"
                     formControlName="endereco">
+                <i class="la la-user"></i>
 
                 <div *ngIf="angForm.controls['endereco'].invalid && (angForm.controls['endereco'].dirty || angForm.controls['endereco'].touched)"
-                    class="alert alert-danger">
+                    class="alert alert-danger mt-2">
                     <div *ngIf="angForm.controls['endereco'].errors.required">
                         Preenchimento obrigatório
                     </div>
@@ -42,9 +52,10 @@
             <div class="sn-field">
                 <input type="text" name="telefone" placeholder="Telefone" [(ngModel)]="usuario.telefone"
                     formControlName="telefone">
+                <i class="la la-user"></i>
 
                 <div *ngIf="angForm.controls['telefone'].invalid && (angForm.controls['telefone'].dirty || angForm.controls['telefone'].touched)"
-                    class="alert alert-danger">
+                    class="alert alert-danger mt-2">
                     <div *ngIf="angForm.controls['telefone'].errors.required">
                         Preenchimento obrigatório
                     </div>
@@ -54,10 +65,24 @@
         <div class="col-lg-12 no-pdd">
             <div class="sn-field">
                 <input type="text" name="email" placeholder="Email" [(ngModel)]="usuario.email" formControlName="email">
+                <i class="la la-user"></i>
 
                 <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)"
-                    class="alert alert-danger">
+                    class="alert alert-danger mt-2">
                     <div *ngIf="angForm.controls['email'].errors.required">
+                        Preenchimento obrigatório
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 no-pdd">
+            <div class="sn-field">
+                <input type="text" name="senha" placeholder="Senha" [(ngModel)]="usuario.senha" formControlName="senha">
+                <i class="la la-user"></i>
+
+                <div *ngIf="angForm.controls['senha'].invalid && (angForm.controls['senha'].dirty || angForm.controls['senha'].touched)"
+                    class="alert alert-danger mt-2">
+                    <div *ngIf="angForm.controls['senha'].errors.required">
                         Preenchimento obrigatório
                     </div>
                 </div>

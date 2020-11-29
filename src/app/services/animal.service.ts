@@ -9,16 +9,18 @@ import { Observable } from 'rxjs';
 export class AnimalService {
 
   constructor(private http: HttpClient) { }
- 
-  list(): Observable<Animal[]>{
+
+  list(): Observable<Animal[]> {
     return this.http.get<Animal[]>('/api/animal/exibeadotar/false');
   }
 
-  qanimal(): Observable<Number>{
+  qanimal(): Observable<Number> {
     return this.http.get<Number>('/api/animal/qanimal/false');
   }
 
-  create(animal: Animal): Observable<Animal>{
+  create(animal: Animal): Observable<Animal> {
+    const data = JSON.parse(localStorage.getItem("userData"));
+    animal.usuario = data._id;
     return this.http.post<Animal>('/api/animal/cadastrar', animal);
   }
 }

@@ -1,1 +1,50 @@
-<p>cadastra-post works!</p>
+<div class="pst-pj">
+    <div class="post-project">
+        <h3>Inserir nova postagem</h3>
+        <div class="post-project-fields">
+            <form [formGroup]="angForm" novalidate>
+
+                <div class="col-lg-12">
+                    <div *ngIf="angFormError">
+                        <div class="alert alert-danger">
+                            {{angFormErrorMessage}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <textarea name="descricao" placeholder="Descrição" [(ngModel)]="post.descricao"
+                        formControlName="descricao"></textarea>
+
+                    <div *ngIf="angForm.controls['descricao'].invalid && (angForm.controls['descricao'].dirty || angForm.controls['descricao'].touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="angForm.controls['descricao'].errors.required">
+                            Preenchimento obrigatório
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngFor="let a of animaisDoUsuario" class="col-lg-12">
+
+                    <div class="col-lg-12">
+                        <select name="animais" [(ngModel)]="animais" formControlName="animais">
+                            <option value="porte">{{a.nome}}</option>
+                            <option value="PEQUENO">Pequeno</option>
+                            <option value="MÉDIO">Médio</option>
+                            <option value="GRANDE">Grande</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-lg-12">
+                    <button type="submit" (click)="create()" [disabled]="angForm.pristine || angForm.invalid"
+                        class="btn btn-success">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+        </div>
+        <a href="#" title=""><i class="la la-times-circle-o"></i></a>
+    </div>
+</div>
+

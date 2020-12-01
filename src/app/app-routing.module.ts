@@ -9,6 +9,7 @@ import { CadastrarAnimalComponent } from './views/animal/cadastrar-animal/cadast
 import { IndexComponent } from './views/index/index.component';
 import { AuthGuard } from '../app/guards/auth.guard';
 import { NoAuthGuard } from '../app/guards/no-auth.guard';
+import { CadastrarPostComponent } from './views/post/cadastrar-post/cadastrar-post.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path: 'animal/cadastrar',
         component: CadastrarAnimalComponent
+      },
+      {
+        path: 'post/cadastrar',
+        component: CadastrarPostComponent
       }
     ]
   },

@@ -15,7 +15,7 @@ export class CadastrarPostComponent implements OnInit {
 
   post: Post;
   usuario: Usuario;
-  animais: Animal[];
+  animaisDoPost: Animal[];
   animaisDoUsuario: Animal[];
   angForm: FormGroup;
   angFormError: boolean = false;
@@ -44,7 +44,7 @@ export class CadastrarPostComponent implements OnInit {
   ngOnInit(): void {
     this.post = new Post();
     this.usuario = new Usuario();
-    this.animais = [];
+    this.animaisDoPost = [];
     this.animalService.list().subscribe((lista) =>{
       this.animaisDoUsuario = lista;
     })
@@ -56,5 +56,9 @@ export class CadastrarPostComponent implements OnInit {
       console.log(post);
     }
     )
+  }
+
+  addAnimal(animal: Animal): void{
+    this.animaisDoPost.push(animal);
   }
 }

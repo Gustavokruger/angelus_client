@@ -7,12 +7,21 @@
             <div class="container">
                 <div class="main-section-data">
                     <div class="row">
+                        
 
                         <div class="col-lg-3 col-md-4 pd-left-none no-pd">
                             <app-user-info></app-user-info>
                         </div>
 
                         <div class="col-lg-9 col-md-8 no-pd">
+
+                            <div class="post-topbar">
+                                <div class="post-st">
+                                    <ul>
+                                        <li><a routerLink="/app/post/cadastrar">Inserir Nova Postagem</a></li>
+                                    </ul>
+                                </div><!--post-st end-->
+                            </div>
                             <router-outlet></router-outlet>
                         </div>
 

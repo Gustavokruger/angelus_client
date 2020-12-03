@@ -24,17 +24,14 @@
                     </div>
                 </div>
 
-            
+                <div class="job_descp" *ngFor="let d of animaisDoPost" >
+                    <div class="sgt-text">
+                        <h4>{{d.nome}}</h4>
+                        <span>{{d.descricao}}</span>
+                    </div>
+                </div>
 
-                    <div class="suggestions-list">
-                        <div class="suggestion-usd" *ngFor="let animal of animaisDoUsuario">
-                            <div class="sgt-text">
-                                <h4>{{animal.nome}}</h4>
-                                <span>{{animal.descricao}}</span>
-                            </div>
-                            <span><i class="la la-plus" (click)="addAnimal(animal._id)"></i></span>
-                        </div>
-                    </div><!--suggestions-list end-->
+               
 
 
                
@@ -47,6 +44,16 @@
                     </button>
                 </div>
             </form>
+
+            <div class="suggestions-list">
+                <div class="suggestion-usd" *ngFor="let animal of animaisDoUsuario">
+                    <div class="sgt-text">
+                        <h4>{{animal.nome}}</h4>
+                        <span>{{animal.descricao}}</span>
+                    </div>
+                    <span><i class="la la-plus" (click)="addAnimal(animal)"></i></span>
+                </div>
+            </div><!--suggestions-list end-->
         </div>
         <a href="#" title=""><i class="la la-times-circle-o"></i></a>
     </div>

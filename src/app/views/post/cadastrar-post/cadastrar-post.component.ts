@@ -37,7 +37,6 @@ export class CadastrarPostComponent implements OnInit {
   createForm(){
     this.angForm = this.fb.group({
       descricao:['', Validators.required],
-      animais:['']
     });
   }
 
@@ -52,6 +51,7 @@ export class CadastrarPostComponent implements OnInit {
   }
 
   create(): void {
+    this.post.animais = this.animaisDoPost;
     this.postService.create(this.post).subscribe((post) => {
       console.log(post);
     }
@@ -60,5 +60,6 @@ export class CadastrarPostComponent implements OnInit {
 
   addAnimal(animal: Animal): void{
     this.animaisDoPost.push(animal);
+    console.log(animal)
   }
 }

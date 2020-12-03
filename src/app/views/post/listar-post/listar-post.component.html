@@ -1,1 +1,38 @@
-<p>listar-post works!</p>
+<div class="main-ws-sec">
+
+    <!--post-topbar end-->
+    <div *ngFor="let d of posts" class="posts-section">
+
+        <div class="post-bar">
+            <div class="post_topbar">
+            
+                <div class="ed-opts">
+                    <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+                    <ul class="ed-options">
+                        <li><a href="#" title="">Editar</a></li>
+                        <li><a href="#" title="">Adotar</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="job_descp">
+                <h3>Post</h3>
+                <p>{{d.descricao}}</p>
+            </div>
+            <div class="job_descp" *ngFor="let a of d.animais">
+                <h3>Nome: {{a.nome}}</h3>
+                <p>{{a.descricao}}</p>
+
+                <ul class="skill-tags">
+                    <li><a href="#" title="">Porte: {{a.porte}}</a></li>
+                    <li><a href="#" title="">Sexo: {{a.sexo}}</a></li>
+                    <li><a href="#" title="">Idade: {{a.idade}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--top-profiles end-->
+
+    </div>
+    <!--posts-section end-->
+
+</div>
+<!--main-ws-sec end-->

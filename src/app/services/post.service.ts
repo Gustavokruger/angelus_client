@@ -11,13 +11,9 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   list(): Observable<Post[]> {
-    return this.http.get<Post[]>('/api/animal/exibeadotar/false');
+    return this.http.get<Post[]>('/api/post/listar');
   }
-
-  qanimal(): Observable<Number> {
-    return this.http.get<Number>('/api/animal/qanimal/false');
-  }
-
+  
   create(post: Post): Observable<Post> {
     const data = JSON.parse(localStorage.getItem("userData"));
     post.usuario = data._id;

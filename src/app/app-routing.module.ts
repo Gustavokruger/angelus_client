@@ -11,7 +11,6 @@ import { IndexComponent } from './views/index/index.component';
 import { AuthGuard } from '../app/guards/auth.guard';
 import { NoAuthGuard } from '../app/guards/no-auth.guard';
 import { CadastrarPostComponent } from './views/post/cadastrar-post/cadastrar-post.component';
-import { ListarPostComponent } from './views/post/listar-post/listar-post.component';
 
 declare var $: any;
 

@@ -41,7 +41,7 @@ export class CadastrarUsuarioComponent implements OnInit {
     this.service.create(this.usuario)
       .subscribe(
         result => {
-          console.log(result);
+          window.location.reload();
         },
         err => {
           this.angFormError = true;

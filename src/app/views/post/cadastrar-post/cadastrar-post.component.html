@@ -2,8 +2,7 @@
     <div class="post-project">
         <h3>Inserir nova postagem</h3>
         <div class="post-project-fields">
-            
-            <h4>Seus Animais</h4>
+            <h3>Selecione um de seus animais</h3>
             <div class="suggestions-list">
                 <div class="suggestion-usd" *ngFor="let animal of animaisDoUsuario">
                     <div class="sgt-text">
@@ -23,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-
+                <h3>Descrição da Postagem</h3>
                 <div class="col-lg-12">
                     <textarea name="descricao" placeholder="Descrição" [(ngModel)]="post.descricao"
                         formControlName="descricao"></textarea>
@@ -35,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-
+                <h3>Animais Selecionados</h3>
                 <div class="suggestions-list">
                     <div class="suggestion-usd" *ngFor="let animal of animaisDoPost">
                         <div class="sgt-text">

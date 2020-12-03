@@ -10,9 +10,10 @@
                     </div>
                     <span><i class="la la-plus" (click)="addAnimal(animal)"></i></span>
                 </div>
-            </div><!--suggestions-list end-->
-            
-            
+            </div>
+            <!--suggestions-list end-->
+
+
             <form [formGroup]="angForm" novalidate>
 
                 <div class="col-lg-12">
@@ -42,9 +43,10 @@
                             <span>{{animal.descricao}}</span>
                         </div>
                     </div>
-                </div><!--suggestions-list end-->
+                </div>
+                <!--suggestions-list end-->
 
-                
+
                 <div class="col-lg-12">
                     <button type="submit" (click)="create()" [disabled]="angForm.pristine || angForm.invalid"
                         class="btn btn-success">
@@ -52,10 +54,6 @@
                     </button>
                 </div>
             </form>
-
-            
         </div>
-        <a href="#" title=""><i class="la la-times-circle-o"></i></a>
     </div>
 </div>
-

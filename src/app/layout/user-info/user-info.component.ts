@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class UserInfoComponent implements OnInit {
   qanimal: Number = 0; qusuario: Number = 0;
   userName: string;
+  userImage: string;
 
   constructor(
     private animalService: AnimalService,
@@ -28,6 +29,7 @@ export class UserInfoComponent implements OnInit {
 
     const data = JSON.parse(localStorage.getItem("userData"));
     this.userName = data.nome;
+    this.userImage = data.cpf;
   }
 
   logout(): void {

@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PostService } from '../../../services/post.service';
 import { Post } from '../../../Models/Post';
 import { AnimalService } from '../../../services/animal.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-post',
@@ -27,6 +28,7 @@ export class CadastrarPostComponent implements OnInit {
     private fb: FormBuilder,
     private postService: PostService,
     private animalService: AnimalService,
+    private router: Router
 
   ) {
     this.createForm();
@@ -34,9 +36,9 @@ export class CadastrarPostComponent implements OnInit {
 
 
 
-  createForm(){
+  createForm() {
     this.angForm = this.fb.group({
-      descricao:['', Validators.required],
+      descricao: ['', Validators.required],
     });
   }
 
@@ -44,7 +46,7 @@ export class CadastrarPostComponent implements OnInit {
     this.post = new Post();
     this.usuario = new Usuario();
     this.animaisDoPost = [];
-    this.animalService.list().subscribe((lista) =>{
+    this.animalService.list().subscribe((lista) => {
       this.animaisDoUsuario = lista;
     })
 
@@ -52,13 +54,18 @@ export class CadastrarPostComponent implements OnInit {
 
   create(): void {
     this.post.animais = this.animaisDoPost;
-    this.postService.create(this.post).subscribe((post) => {
-      console.log(post);
-    }
+    this.postService.create(this.post).subscribe(
+      result => {
+        this.router.navigate(['/app']);
+      },
+      err => {
+        this.angFormError = true;
+        this.angFormErrorMessage = err.error.mensagem;
+      }
     )
   }
 
-  addAnimal(animal: Animal): void{
+  addAnimal(animal: Animal): void {
     this.animaisDoPost.push(animal);
     console.log(animal)
   }

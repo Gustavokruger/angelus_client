@@ -12,17 +12,29 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class ListarAnimalComponent implements OnInit {
 
   animais: Animal[] = [];
-  
+
   constructor(
-    private router: Router, 
-    private animalService: AnimalService, 
+    private router: Router,
+    private animalService: AnimalService,
     private utilsService: UtilsService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.animalService.list().subscribe((lista) =>{
+    this.animalService.list().subscribe((lista) => {
       this.animais = lista;
     })
+  }
+
+  adotar(animal: Animal, status: boolean): void {
+    animal.adotado = status;
+    this.animalService.update(animal).subscribe(
+      result => {
+        this.router.navigate(['/app/animal']);
+      },
+      err => {
+        console.log(err)
+      }
+    )
   }
 
 }

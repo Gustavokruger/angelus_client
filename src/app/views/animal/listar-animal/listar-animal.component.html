@@ -13,17 +13,15 @@
                                 alt="">{{utilsService.dateTimeDB2BR(d.criadoEm)}}</span>
                     </div>
                 </div>
-                <div class="ed-opts">
-                    <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
-                    <ul class="ed-options">
-                        <li><a href="#" title="">Editar</a></li>
-                        <li><a href="#" title="">Adotar</a></li>
+                <div class="post-st">
+                    <ul>
+                        <li><a (click)="adotar(d, true)" routerLink="" *ngIf="!d.adotado">Adotar</a></li>
                     </ul>
                 </div>
             </div>
             <div class="job_descp">
                 <h3>Nome: {{d.nome}}</h3>
-                <p>{{d.descricao}}</p>
+                <p *ngIf="d.adotado" class="text-danger">Adotado</p>
 
                 <ul class="skill-tags">
                     <li><a href="#" title="">Porte: {{d.porte}}</a></li>

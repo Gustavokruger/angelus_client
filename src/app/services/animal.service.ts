@@ -24,4 +24,10 @@ export class AnimalService {
     animal.usuario = data._id;
     return this.http.post<Animal>('/api/animal/cadastrar', animal);
   }
+
+  update(animal: Animal): Observable<Animal> {
+    const data = JSON.parse(localStorage.getItem("userData"));
+    animal.usuario = data._id;
+    return this.http.put<Animal>(`/api/animal/alterar`, animal);
+  }
 }

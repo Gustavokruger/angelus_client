@@ -18,7 +18,7 @@ export class ListarPostComponent implements OnInit {
 
   constructor(
     private postService: PostService,
-    private utilService: UtilsService
+    private utilsService: UtilsService
   ) { }
 
   ngOnInit(): void {

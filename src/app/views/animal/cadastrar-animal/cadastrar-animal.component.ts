@@ -46,7 +46,7 @@ export class CadastrarAnimalComponent implements OnInit {
   create(): void {
     this.animalService.create(this.animal).subscribe(
       result => {
-        this.router.navigate(['/app']);
+        this.router.navigate(['/app/animal']);
       },
       err => {
         this.angFormError = true;

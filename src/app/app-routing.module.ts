@@ -5,12 +5,15 @@ import { MainComponent } from './layout/main/main.component';
 
 import { LoginComponent } from './views/login/login.component';
 import { ListarAnimalComponent } from './views/animal/listar-animal/listar-animal.component';
+import { ListarPostComponent } from './views/post/listar-post/listar-post.component';
 import { CadastrarAnimalComponent } from './views/animal/cadastrar-animal/cadastrar-animal.component';
 import { IndexComponent } from './views/index/index.component';
 import { AuthGuard } from '../app/guards/auth.guard';
 import { NoAuthGuard } from '../app/guards/no-auth.guard';
 import { CadastrarPostComponent } from './views/post/cadastrar-post/cadastrar-post.component';
 import { ListarPostComponent } from './views/post/listar-post/listar-post.component';
+
+declare var $: any;
 
 const routes: Routes = [
   {
@@ -30,7 +33,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: ListarAnimalComponent
+        component: ListarPostComponent
       },
       {
         path: 'animal',

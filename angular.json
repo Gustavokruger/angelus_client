@@ -51,9 +51,28 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/css/animate.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/line-awesome.css",
+              "src/assets/css/line-awesome-font-awesome.min.css",
+              "src/assets/css/font-awesome.min.css",
+              "src/assets/lib/slick/slick.css",
+              "src/assets/lib/slick/slick-theme.css",
+              "src/assets/css/style.css",
+              "src/assets/css/responsive.css",
+              "src/assets/css/main.css",
+              "src/assets/css/animations.css",
+              "src/assets/css/page-landing.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/popper.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/jquery.mCustomScrollbar.js",
+              "src/assets/lib/slick/slick.min.js",
+              "src/assets/js/scrollbar.js",
+              "src/assets/js/script.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -25,4 +25,14 @@ export class ListarAnimalComponent implements OnInit {
     })
   }
 
+  updateStatus(animal:Animal):void {
+    animal.adotado = !animal.adotado;
+    this.animalService.update(animal)
+    .subscribe(
+      result => {
+        this.router.navigate(['/app/animal']);
+      },
+    )
+  }
+
 }

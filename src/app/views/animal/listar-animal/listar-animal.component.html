@@ -13,17 +13,19 @@
                                 alt="">{{utilsService.dateTimeDB2BR(d.criadoEm)}}</span>
                     </div>
                 </div>
+                <li><a href="#" (click)="updateStatus(d, true)" title="">Adotar</a></li>
                 <div class="ed-opts">
                     <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
                     <ul class="ed-options">
                         <li><a href="#" title="">Editar</a></li>
-                        <li><a href="#" title="">Adotar</a></li>
                     </ul>
                 </div>
             </div>
             <div class="job_descp">
                 <h3>Nome: {{d.nome}}</h3>
-                <p>{{d.descricao}}</p>
+                <!-- <div *ngIf="d.adotado; else elseBlock">Status: Adotado</div>
+                <ng-template #elseBlock>Status: Disponivel</ng-template> -->
+                <p>{{d.adotado}}</p>
 
                 <ul class="skill-tags">
                     <li><a href="#" title="">Porte: {{d.porte}}</a></li>

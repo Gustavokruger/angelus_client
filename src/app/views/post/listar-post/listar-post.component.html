@@ -2,12 +2,21 @@
 
     <!--post-topbar end-->
     <div *ngFor="let p of posts" class="posts-section">
-       
         <div class="post-bar">
+            <div class ="usy-name">
+                
+            </div>
             <div class="post-topbar">
-                <h5>{{p.usuario.nome}}</h5>
-                <span><img src="assets/images/template/clock.png"
-                    alt="">{{utilsService.dateTimeDB2BR(p.criadoEm)}}</span>
+                <div class ="usy-name">
+                    <h3>{{p.usuario.nome}}</h3>
+                    <span><img src="assets/images/template/clock.png"
+                        alt="">{{utilsService.dateTimeDB2BR(p.criadoEm)}}</span>
+                </div>
+              
+            </div>
+            <div class="job_descp">
+                <h3>Descricao:</h3>
+                <p>{{p.descricao}}</p>
             </div>
             <div *ngFor="let d of p.animais" class="posts-section">
                 <div class="post_topbar">
@@ -32,10 +41,6 @@
                 </div>
             </div>
         </div>
-        <!--top-profiles end-->
-
-        
-        <!--posts-section end-->
     </div>    
 </div>
 <!--main-ws-sec end-->

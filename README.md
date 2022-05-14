@@ -1,3 +1,7 @@
+
+Disclaimer: this project will be restarded open-source in memory of our long lost friend.
+
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
